@@ -1,0 +1,39 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<header>
+<a href="{% url 'main:index' %}">главная страница</a>
+<a href="{% url 'main:product' %}">продукт</a>
+<a href="{% url 'main:about' %}">О нас</a>
+<a href="{% url 'main:contacts' %}">контакты</a>
+{% if user.is_authenticated %}
+<a href="{% url 'main:profile' %}">профиль</a>
+<a href="{% url 'main:logout' %}">выход</a>
+{% else %}
+<a href="{% url 'main:login' %}">вход</a>
+{% endif %}
+</header>
+<main>
+{%block content%}
+{%endblock%}
+
+{%block about%}
+{%endblock%}
+
+{%block contacts%}
+{%endblock%}
+
+{%block product%}
+
+{%endblock%}
+</main>
+</body>
+</html>
