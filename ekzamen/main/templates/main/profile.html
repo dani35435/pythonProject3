@@ -1,6 +1,15 @@
 {% extends "layout/base.html" %}
-
+{% load bootstrap4 %}
 
 {%block content%}
 <p>добавление ваших услуг</p>
+<div class="center">
+   <h1 class="text_center_create">Создание заявки</h1>
+   <form method="post" enctype="multipart/form-data">
+       {% csrf_token %}
+       {{order.user}}
+       {% bootstrap_form form layout='horizontal' %}
+       {% buttons submit='Добавить' %} {% endbuttons %}
+   </form>
+</div>
 {%endblock%}

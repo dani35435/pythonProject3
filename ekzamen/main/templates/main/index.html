@@ -7,5 +7,13 @@
 </head>
 <body>
 
+{% block content %}
+<p>здесь будут вывыодится краткие описания услуг</p>
+{% for item in res %}
+{{item.name}}<br>
+{{item.descriptions}}<br>
+ <img style="width: 100px" src="media/{{ item.photo_file }}"><br>
+{% endfor %}
+{% endblock %}
 </body>
 </html>
